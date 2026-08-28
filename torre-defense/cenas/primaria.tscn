@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://btjl1uws6q3jl"]
+
+[ext_resource type="Script" uid="uid://drey5xjoh884h" path="res://script/primaria.gd" id="1_ktc6x"]
+[ext_resource type="Script" uid="uid://cxa4efqsu0k4j" path="res://script/path_follow_2d.gd" id="1_w75ji"]
+[ext_resource type="PackedScene" uid="uid://duh3jff346qh3" path="res://cenas/slime.tscn" id="2_ktc6x"]
+
+[sub_resource type="Curve2D" id="Curve2D_w75ji"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 38, 249, 0, 0, 0, 0, 327, 250, 0, 0, 0, 0, 341, 498, 0, 0, 0, 0, 651, 489, 0, 0, 0, 0, 807, 343, 0, 0, 0, 0, 807, 163, 0, 0, 0, 0, 944, 159, 0, 0, 0, 0, 945, 492, 0, 0, 0, 0, 881, 579, 0, 0, 0, 0, 534, 598, 0, 0, 0, 0, 537, 655)
+}
+point_count = 11
+
+[node name="Node2D" type="Node2D" unique_id=1939666864]
+script = ExtResource("1_ktc6x")
+inimigo_scene = ExtResource("2_ktc6x")
+
+[node name="Path2D" type="Path2D" parent="." unique_id=1369968415]
+curve = SubResource("Curve2D_w75ji")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=1118525654]
+position = Vector2(38, 249)
+rotation = 0.0034601938
+rotates = false
+script = ExtResource("1_w75ji")
+
+[node name="Node2D" parent="Path2D/PathFollow2D" unique_id=1562884970 instance=ExtResource("2_ktc6x")]
