@@ -9,7 +9,7 @@ size = Vector2(77.714294, 214.95123)
 [node name="slime" type="Node2D" unique_id=1562884970]
 script = ExtResource("1_1ikvx")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1210537962]
+[node name="Area2D" type="Area2D" parent="." unique_id=1210537962 groups=["inimigos"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=101888129]
 position = Vector2(-0.99999905, -1.0000038)
@@ -24,16 +24,21 @@ texture = ExtResource("1_ulb1h")
 [node name="ColorRect" type="ColorRect" parent="." unique_id=554752937]
 offset_left = -20.0
 offset_top = -56.0
-offset_right = 20.0
+offset_right = 14.0
 offset_bottom = -42.0
-pivot_offset = Vector2(20, 18)
+pivot_offset = Vector2(20, 6)
 color = Color(7.460266e-07, 0.32619923, 0.44430315, 0.5764706)
 
 [node name="vida" type="Label" parent="ColorRect" unique_id=1782991430]
-layout_mode = 0
-offset_left = 1.0
-offset_top = -4.0
-offset_right = 40.0
-offset_bottom = 19.0
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.286
+offset_left = 6.0
+offset_top = -5.0
+offset_bottom = -0.00399971
 pivot_offset = Vector2(19, 11)
 size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.83137256, 0.70980394, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.31764707, 0, 0.13725491, 0.9098039)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)

@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://cxxpc1nss8vjp"]
 
 [ext_resource type="Script" uid="uid://nbfagnpuor5v" path="res://script/control.gd" id="1_pfxg8"]
+[ext_resource type="PackedScene" uid="uid://d2br46qne6f3w" path="res://cenas/atiradores.tscn" id="2_76rrw"]
+[ext_resource type="Texture2D" uid="uid://c0xyrayn4y7p7" path="res://icon.svg" id="3_sl1c7"]
 
 [sub_resource type="Theme" id="Theme_xrivr"]
 Button/colors/font_color = Color(0.47076458, 0.34284952, 0.060588732, 1)
@@ -18,25 +20,63 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_vertical = 8
+mouse_filter = 2
 script = ExtResource("1_pfxg8")
+atirador_scene = ExtResource("2_76rrw")
 
-[node name="Button" type="Button" parent="." unique_id=1442711442]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1956669762]
+layout_mode = 0
+offset_left = 30.0
+offset_top = -399.5
+offset_right = 1122.0
+offset_bottom = -271.5
+grow_vertical = 0
+size_flags_vertical = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=444454851]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="." unique_id=1654796367]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Control" unique_id=1587393121]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -43.0
-offset_right = 247.5
+offset_top = 609.0
+offset_right = 355.0
+offset_bottom = 839.0
+grow_vertical = 0
+color = Color(0, 0, 0, 0.8980392)
+
+[node name="TextureButton" type="TextureButton" parent="Control" unique_id=1703059537]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 32.0
+offset_top = 633.0
+offset_right = 160.0
+offset_bottom = 761.0
+grow_vertical = 0
+texture_normal = ExtResource("3_sl1c7")
+
+[node name="Button" type="Button" parent="Control" unique_id=1442711442]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 62.0
+offset_top = 552.0
+offset_right = 116.0
+offset_bottom = 588.0
 grow_vertical = 0
 theme = SubResource("Theme_xrivr")
 text = "LOJA"
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1587393121]
-layout_mode = 0
-offset_left = -16.0
-offset_top = 648.0
-offset_right = 339.0
-offset_bottom = 878.0
-color = Color(0, 0, 0, 0.8980392)
-
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Control/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]
