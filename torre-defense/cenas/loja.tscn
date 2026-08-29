@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://cxxpc1nss8vjp"]
+
+[ext_resource type="Script" uid="uid://nbfagnpuor5v" path="res://script/control.gd" id="1_pfxg8"]
+
+[sub_resource type="Theme" id="Theme_xrivr"]
+Button/colors/font_color = Color(0.47076458, 0.34284952, 0.060588732, 1)
+Button/colors/font_focus_color = Color(0.9490196, 0.9490196, 0.101960786, 1)
+Button/colors/font_outline_color = Color(0, 0, 0.38039216, 1)
+Button/colors/font_pressed_color = Color(1, 1, 0.5254902, 1)
+Button/colors/icon_focus_color = Color(1, 1, 0.05882353, 1)
+Button/colors/icon_normal_color = Color(0.12941177, 0.13725491, 1, 1)
+Button/font_sizes/font_size = 20
+
+[node name="Control" type="Control" unique_id=1785222013]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pfxg8")
+
+[node name="Button" type="Button" parent="." unique_id=1442711442]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -43.0
+offset_right = 247.5
+grow_vertical = 0
+theme = SubResource("Theme_xrivr")
+text = "LOJA"
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1587393121]
+layout_mode = 0
+offset_left = -16.0
+offset_top = 648.0
+offset_right = 339.0
+offset_bottom = 878.0
+color = Color(0, 0, 0, 0.8980392)
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

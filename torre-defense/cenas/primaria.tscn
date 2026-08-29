@@ -6,21 +6,30 @@
 
 [sub_resource type="Curve2D" id="Curve2D_w75ji"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 38, 249, 0, 0, 0, 0, 327, 250, 0, 0, 0, 0, 341, 498, 0, 0, 0, 0, 651, 489, 0, 0, 0, 0, 807, 343, 0, 0, 0, 0, 807, 163, 0, 0, 0, 0, 944, 159, 0, 0, 0, 0, 945, 492, 0, 0, 0, 0, 881, 579, 0, 0, 0, 0, 534, 598, 0, 0, 0, 0, 537, 655)
+"points": PackedVector2Array(0, 0, 0, 0, -55, 251, 0, 0, 0, 0, 327, 250, 0, -77.99999, 0, 77.99999, 336, 430, -52.499996, 16.499998, 52.499996, -16.499998, 651, 489, -31.499998, 55.499996, 31.499998, -55.499996, 807, 343, 0, 0, 0, 0, 807, 163, 0, 0, 0, 0, 944, 159, 0, 0, 0, 0, 945, 492, 0, 0, 0, 0, 881, 579, 32.999996, 7.4999995, -32.999996, -7.4999995, 636, 623)
 }
-point_count = 11
+point_count = 10
 
 [node name="Node2D" type="Node2D" unique_id=1939666864]
 script = ExtResource("1_ktc6x")
-inimigo_scene = ExtResource("2_ktc6x")
+inimigos_scenes = Array[PackedScene]([ExtResource("2_ktc6x")])
+intervalo = 0.9
+tempo_min_entre_rodadas = 5.0
+tempo_max_entre_rodadas = 8.0
 
 [node name="Path2D" type="Path2D" parent="." unique_id=1369968415]
+position = Vector2(33, -87)
 curve = SubResource("Curve2D_w75ji")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=1118525654]
-position = Vector2(38, 249)
+position = Vector2(-55, 251)
 rotation = 0.0034601938
 rotates = false
+loop = false
 script = ExtResource("1_w75ji")
 
 [node name="Node2D" parent="Path2D/PathFollow2D" unique_id=1562884970 instance=ExtResource("2_ktc6x")]
+
+[node name="Rodada" type="Label" parent="." unique_id=1564613674]
+offset_right = 40.0
+offset_bottom = 23.0

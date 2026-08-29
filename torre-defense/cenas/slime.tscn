@@ -20,3 +20,20 @@ shape = SubResource("RectangleShape2D_smc2o")
 position = Vector2(-0.99999905, -1.0000038)
 scale = Vector2(0.21875, 0.3203125)
 texture = ExtResource("1_ulb1h")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=554752937]
+offset_left = -20.0
+offset_top = -56.0
+offset_right = 20.0
+offset_bottom = -42.0
+pivot_offset = Vector2(20, 18)
+color = Color(7.460266e-07, 0.32619923, 0.44430315, 0.5764706)
+
+[node name="vida" type="Label" parent="ColorRect" unique_id=1782991430]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -4.0
+offset_right = 40.0
+offset_bottom = 19.0
+pivot_offset = Vector2(19, 11)
+size_flags_horizontal = 4
