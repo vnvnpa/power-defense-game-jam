@@ -27,7 +27,15 @@ extends Node2D
 @export var tempo_max_entre_rodadas: float = 8.0
 
 
+
 func _ready():
+	var largura = get_viewport().get_visible_rect().size.x
+	
+	Rodada.position.x = (largura - Rodada.size.x) / 2
+	Rodada.position.y = 20 # 20 pixels abaixo do topo
+	
+
+	
 	path_follow_original.set_process(false)
 	await iniciar_rodadas()
 

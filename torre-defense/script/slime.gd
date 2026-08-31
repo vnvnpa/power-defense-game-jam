@@ -4,7 +4,7 @@ extends Node2D
 @onready var color_rect: ColorRect = $ColorRect
 
 var posicao_x_anterior: float = 0.0
-var life = 50
+var life = 30
 
 func _ready():
 	posicao_x_anterior = global_position.x
@@ -19,4 +19,5 @@ func tomar_dano(dano: int):
 	life -= dano
 	vida.text = str(life)
 	if life <= 0:
-		queue_free()
+		ControleDeTudo.coin += 1
+		get_parent().queue_free()

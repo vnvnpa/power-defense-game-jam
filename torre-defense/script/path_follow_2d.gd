@@ -6,6 +6,8 @@ extends PathFollow2D
 
 func _process(delta):
 	progress += velocidade * delta
-
+	if progress_ratio >= 1.0:
+		ControleDeTudo.perder_vida(1)
+		queue_free()
 	if progress_ratio >= 1.0:
 		queue_free()

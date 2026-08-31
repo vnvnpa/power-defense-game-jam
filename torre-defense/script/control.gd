@@ -19,6 +19,10 @@ func _on_button_pressed() -> void:
 @export var atirador_scene: PackedScene  # arrasta a cena da torre aqui no Inspector
 
 func _on_texture_button_pressed() -> void:
-	var torre = atirador_scene.instantiate()
-	get_tree().current_scene.add_child(torre)
-	torre.global_position = get_global_mouse_position()
+	if ControleDeTudo.coin >= 10:
+		var torre = atirador_scene.instantiate()
+		get_tree().current_scene.add_child(torre)
+		torre.global_position = get_global_mouse_position()
+	
+	else:
+		ControleDeTudo.invalido.emit()

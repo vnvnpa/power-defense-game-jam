@@ -6,7 +6,7 @@ var pronto_para_fixar: bool = false
 @export var projetil_scene: PackedScene
 @export var cadencia: float = 1.0
 @export var velocidade_projetil: float = 400.0
-@export var life: int = 50
+@export var life: int = 30
 
 
 @onready var area_alcance: Area2D = $are
@@ -24,6 +24,7 @@ func _ready():
 	area_alcance.area_entered.connect(_on_inimigo_entrou)
 	area_alcance.area_exited.connect(_on_inimigo_saiu)
 	area_de_receber_b_.monitorable = false
+	
 	
 func _process(_delta):
 	if arrastando:
@@ -82,3 +83,4 @@ func _unhandled_input(event):
 func colocar():
 	area_de_receber_b_.monitorable = true
 	arrastando = false
+	ControleDeTudo.coin -= 10

@@ -14,6 +14,10 @@ config/name="torre defense"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+ControleDeTudo="*uid://bbaxt47bq61xk"
+
 [display]
 
 window/size/borderless=true
