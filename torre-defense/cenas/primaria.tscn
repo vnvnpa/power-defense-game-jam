@@ -2,17 +2,31 @@
 
 [ext_resource type="Script" uid="uid://drey5xjoh884h" path="res://script/primaria.gd" id="1_ktc6x"]
 [ext_resource type="Script" uid="uid://cxa4efqsu0k4j" path="res://script/path_follow_2d.gd" id="1_w75ji"]
+[ext_resource type="Script" uid="uid://obx0pn0jay11" path="res://script/new_script.gd" id="2_8j7ug"]
+[ext_resource type="PackedScene" uid="uid://duh3jff346qh3" path="res://cenas/inimigos/slime.tscn" id="3_oct4s"]
 [ext_resource type="PackedScene" uid="uid://bv6y1ckpdqb5i" path="res://cenas/ControleTudo,hub.tscn" id="4_7urru"]
 [ext_resource type="PackedScene" uid="uid://cxxpc1nss8vjp" path="res://cenas/loja.tscn" id="4_ktc6x"]
+[ext_resource type="PackedScene" uid="uid://bjjqrxucxlxkt" path="res://cenas/inimigos/slimeVerdeApagado.tscn" id="4_ltjes"]
+
+[sub_resource type="Resource" id="Resource_ktc6x"]
+script = ExtResource("2_8j7ug")
+cena = ExtResource("3_oct4s")
+metadata/_custom_type_script = "uid://obx0pn0jay11"
+
+[sub_resource type="Resource" id="Resource_7urru"]
+script = ExtResource("2_8j7ug")
+cena = ExtResource("4_ltjes")
+metadata/_custom_type_script = "uid://obx0pn0jay11"
 
 [sub_resource type="Curve2D" id="Curve2D_w75ji"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -55, 251, 0, 0, 0, 0, 152, 252, 0, -77.99999, 0, 77.99999, 336, 430, -92.443634, 26.01039, 92.443634, -26.01039, 614, 443, -31.499998, 55.499996, 31.499998, -55.499996, 807, 343, 0, 0, 0, 0, 944, 328, 0, 0, 0, 0, 968, 373, 0, 0, 0, 0, 945, 492, 0, 0, 0, 0, 881, 579, 66.01128, 49.943066, -66.01128, -49.943066, 506, 645, 0, 0, 0, 0, 346, 649)
+"points": PackedVector2Array(0, 0, 0, 0, -137, 79, 0, 0, 0, 0, -141, 246, 0, 0, 0, 0, 152, 252, 0, 0, 0, 0, 863, 169, 0, 0, 0, 0, 945, 492, 0, 0, 0, 0, 637, 453, 0, 0, 0, 0, 204, 494, 0, 0, 0, 0, 215, 616, 0, 0, 0, 0, 500, 635, 0, 0, 0, 0, 496, 768)
 }
-point_count = 11
+point_count = 10
 
 [node name="Node2D" type="Node2D" unique_id=1939666864]
 script = ExtResource("1_ktc6x")
+inimigos_normais = Array[ExtResource("2_8j7ug")]([SubResource("Resource_ktc6x"), SubResource("Resource_7urru")])
 
 [node name="CanvasLayer" parent="." unique_id=402603602 instance=ExtResource("4_7urru")]
 
@@ -21,11 +35,14 @@ position = Vector2(33, -87)
 curve = SubResource("Curve2D_w75ji")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=1118525654]
-position = Vector2(-55, 251)
+position = Vector2(-137, 79)
 rotation = 0.0034601938
 rotates = false
 loop = false
 script = ExtResource("1_w75ji")
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="Path2D" unique_id=1129624567]
+spawn_path = NodePath("..")
 
 [node name="Rodada" type="Label" parent="." unique_id=1564613674]
 anchors_preset = 15
@@ -40,9 +57,3 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 
 [node name="Control" parent="." unique_id=1785222013 instance=ExtResource("4_ktc6x")]
-anchors_preset = 2
-anchor_top = 1.0
-anchor_right = 0.0
-grow_horizontal = 1
-grow_vertical = 0
-size_flags_horizontal = 0

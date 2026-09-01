@@ -2,7 +2,7 @@ extends PathFollow2D
 
 
 
-@export var velocidade: float = 100.0
+@export var velocidade: float = 70.0
 
 func _process(delta):
 	progress += velocidade * delta

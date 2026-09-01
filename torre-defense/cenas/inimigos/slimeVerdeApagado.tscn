@@ -1,0 +1,169 @@
+[gd_scene format=3 uid="uid://bjjqrxucxlxkt"]
+
+[ext_resource type="Script" uid="uid://crg6o27a3kwlq" path="res://script/slime_verde_apagado.gd" id="1_0mjj2"]
+[ext_resource type="Texture2D" uid="uid://bwqe6mwcnw2st" path="res://acerts/slime verde escuro apagado.png" id="2_0mjj2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_smc2o"]
+size = Vector2(77.714294, 214.95123)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wn2vk"]
+atlas = ExtResource("2_0mjj2")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tmqia"]
+atlas = ExtResource("2_0mjj2")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ml5wr"]
+atlas = ExtResource("2_0mjj2")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3qj58"]
+atlas = ExtResource("2_0mjj2")
+region = Rect2(192, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f27ug"]
+atlas = ExtResource("2_0mjj2")
+region = Rect2(256, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xvgte"]
+atlas = ExtResource("2_0mjj2")
+region = Rect2(320, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_buns1"]
+atlas = ExtResource("2_0mjj2")
+region = Rect2(384, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dmei5"]
+atlas = ExtResource("2_0mjj2")
+region = Rect2(448, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5my7v"]
+atlas = ExtResource("2_0mjj2")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3b7j1"]
+atlas = ExtResource("2_0mjj2")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n2sgp"]
+atlas = ExtResource("2_0mjj2")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_soevv"]
+atlas = ExtResource("2_0mjj2")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r2ui3"]
+atlas = ExtResource("2_0mjj2")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pkvge"]
+atlas = ExtResource("2_0mjj2")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l0svl"]
+atlas = ExtResource("2_0mjj2")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ylomq"]
+atlas = ExtResource("2_0mjj2")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xrivr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wn2vk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tmqia")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ml5wr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3qj58")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f27ug")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xvgte")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_buns1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dmei5")
+}],
+"loop": 1,
+"name": &"andarFrente",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5my7v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3b7j1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n2sgp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_soevv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r2ui3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pkvge")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l0svl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ylomq")
+}],
+"loop": 1,
+"name": &"andarLado",
+"speed": 5.0
+}]
+
+[node name="slime" type="Node2D" unique_id=1562884970]
+script = ExtResource("1_0mjj2")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1210537962 groups=["inimigos"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=101888129]
+position = Vector2(-0.99999905, -1.0000038)
+scale = Vector2(0.21875, 0.3203125)
+shape = SubResource("RectangleShape2D_smc2o")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=554752937]
+offset_left = -20.0
+offset_top = -56.0
+offset_right = 14.0
+offset_bottom = -42.0
+pivot_offset = Vector2(20, 6)
+color = Color(7.460266e-07, 0.32619923, 0.44430315, 0.5764706)
+
+[node name="vida" type="Label" parent="ColorRect" unique_id=1782991430]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.286
+offset_left = 6.0
+offset_top = -5.0
+offset_bottom = -0.00399971
+pivot_offset = Vector2(19, 11)
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.83137256, 0.70980394, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.31764707, 0, 0.13725491, 0.9098039)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+
+[node name="slime" type="AnimatedSprite2D" parent="." unique_id=1925798895]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_xrivr")
+animation = &"andarLado"

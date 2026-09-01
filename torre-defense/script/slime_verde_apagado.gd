@@ -7,7 +7,7 @@ extends Node2D
 @export var velocidade: float = 100.0  # ajuste esse valor no Inspector pra cada inimigo/cena
 
 var posicao_anterior: Vector2 = Vector2.ZERO
-var life = 30
+var life = 50
 
 func _ready():
 	posicao_anterior = global_position
